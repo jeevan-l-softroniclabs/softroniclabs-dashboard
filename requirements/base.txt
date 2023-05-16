@@ -278,7 +278,7 @@ six==1.16.0
     #   wtforms-json
 slack-sdk==3.21.3
     # via apache-superset
-sqlalchemy==1.4.36
+sqlalchemy==1.4.23
     # via
     #   alembic
     #   apache-superset

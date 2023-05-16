@@ -100,13 +100,46 @@ class CeleryConfig(object):
 
 CELERY_CONFIG = CeleryConfig
 
-FEATURE_FLAGS = {"ALERT_REPORTS": True}
+FEATURE_FLAGS = {"ALERT_REPORTS": True,
+                 "EMBEDDED_SUPERSET": True,
+                 "ENABLE_JWT_CUSTOMIZATION" : True}
+
+SESSION_COOKIE_SECURE = False
+HTTP_HEADERS = {'X-Frame-Options': 'ALLOWALL'}
+SESSION_COOKIE_SAMESITE = None
+ENABLE_PROXY_FIX = True
+# from security import CustomSecurityManager
+# CUSTOM_SECURITY_MANAGER = CustomSecurityManager
+PUBLIC_ROLE_LIKE_GAMMA = True
+# CORS_OPTIONS = {
+#     'supports_credentials': True,
+#     'allow_headers': ['*'],
+#     'resources': ['*'],
+#     'origins': ['http://0.0.0.0:8088', 'http://localhost:8000']
+# }
+
+from security import CustomSecurityManager
+CUSTOM_SECURITY_MANAGER = CustomSecurityManager
+ENABLE_ACCESS_REQUESTS = True
+
+API_AUTH_ENABLED = True
+API_KEY_TYPE = "Header"
+API_KEY_HEADER = "Authorization"
+# ENABLE_CORS = True
+# CORS_ALLOW_ORIGINS = ['http://*', 'https://*']
+
 ALERT_REPORTS_NOTIFICATION_DRY_RUN = True
 WEBDRIVER_BASEURL = "http://superset:8088/"
-# The base URL for the email report hyperlinks.
 WEBDRIVER_BASEURL_USER_FRIENDLY = WEBDRIVER_BASEURL
 
 SQLLAB_CTAS_NO_LIMIT = True
+GUEST_ROLE_NAME = "Gamma"
+# ALERT_REPORTS_NOTIFICATION_DRY_RUN = True
+# WEBDRIVER_BASEURL = "http://superset:8088/"
+# # The base URL for the email report hyperlinks.
+# WEBDRIVER_BASEURL_USER_FRIENDLY = WEBDRIVER_BASEURL
+#
+# SQLLAB_CTAS_NO_LIMIT = True
 
 #
 # Optionally import superset_config_docker.py (which will have been included on
