@@ -5,21 +5,19 @@
 # to you under the Apache License, Version 2.0 (the
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
-#
 #   http://www.apache.org/licenses/LICENSE-2.0
-#
 # Unless required by applicable law or agreed to in writing,
 # software distributed under the License is distributed on an
 # "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-#
 # This file is included in the final Docker image and SHOULD be overridden when
 # deploying the image to prod. Settings configured here are intended for use in local
 # development environments. Also note that superset_config_docker.py is imported
 # as a final step as a means to override "defaults" configured here
-#
+from security import CustomSecurityManager
+
 import logging
 import os
 from datetime import timedelta
@@ -108,8 +106,7 @@ SESSION_COOKIE_SECURE = False
 HTTP_HEADERS = {'X-Frame-Options': 'ALLOWALL'}
 SESSION_COOKIE_SAMESITE = None
 ENABLE_PROXY_FIX = True
-# from security import CustomSecurityManager
-# CUSTOM_SECURITY_MANAGER = CustomSecurityManager
+
 PUBLIC_ROLE_LIKE_GAMMA = True
 # CORS_OPTIONS = {
 #     'supports_credentials': True,
@@ -118,7 +115,6 @@ PUBLIC_ROLE_LIKE_GAMMA = True
 #     'origins': ['http://0.0.0.0:8088', 'http://localhost:8000']
 # }
 
-from security import CustomSecurityManager
 CUSTOM_SECURITY_MANAGER = CustomSecurityManager
 ENABLE_ACCESS_REQUESTS = True
 
@@ -138,13 +134,9 @@ GUEST_ROLE_NAME = "Gamma"
 # WEBDRIVER_BASEURL = "http://superset:8088/"
 # # The base URL for the email report hyperlinks.
 # WEBDRIVER_BASEURL_USER_FRIENDLY = WEBDRIVER_BASEURL
-#
 # SQLLAB_CTAS_NO_LIMIT = True
-
-#
 # Optionally import superset_config_docker.py (which will have been included on
 # the PYTHONPATH) in order to allow for local settings to be overridden
-#
 try:
     import superset_config_docker
     from superset_config_docker import *  # noqa

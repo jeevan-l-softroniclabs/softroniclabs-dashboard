@@ -13,8 +13,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-x-superset-image: &superset-image apache/superset:${TAG:-latest-dev}
+
+
+
+#x-superset-image: &superset-image jeevanlsoftroniclabs/superset:${TAG:-latest-dev} # docker pull jeevanlsoftroniclabs/superset:latest-dev (use this image for company purpose)
+x-superset-image: &superset-image apache/superset:${TAG:-latest-dev}  # this is normal apache/superset image , with no changes
 x-superset-depends-on: &superset-depends-on
   - db
   - redis
