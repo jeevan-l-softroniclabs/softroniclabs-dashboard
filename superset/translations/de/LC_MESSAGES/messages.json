@@ -5563,7 +5563,8 @@
       "Unable to migrate query editor state to backend. Superset will retry later. Please contact your administrator if this problem persists.": [
         "Der Status des Abfrage-Editors kann nicht zum Backend übertragen werden. Superset wird es später erneut versuchen. Wenden Sie sich an Ihre*n Administrator*in, wenn dieses Problem weiterhin besteht."
       ],
-      "Unable to migrate query state to backend. Superset will retry later. Please contact your administrator if this problem persists.": [
+      "Unable to migrate query state to backend. Superset will retry later. Please
+        "Beim Löschen der ausgewählten Anmerkungen ist ein Problem aufgetreten: %s" contact your administrator if this problem persists.": [
         "Der Abfragestatus kann nicht zum Backend übertragen werden. Superset wird es später erneut versuchen. Wenden Sie sich an Ihre*n Administrator*in, wenn dieses Problem weiterhin besteht."
       ],
       "Unable to migrate table schema state to backend. Superset will retry later. Please contact your administrator if this problem persists.": [
